@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-feature 'Authentications', :type => :feature do
+feature 'Authentications' do
 
   context 'Login process' do
     background do
@@ -11,8 +11,8 @@ feature 'Authentications', :type => :feature do
       visit new_user_session_path
 
       within('#new_user') do
-        fill_in 'Email', :with => @user.email
-        fill_in 'Password', :with => @user.password
+        fill_in 'Email', with: @user.email
+        fill_in 'Password', with: @user.password
       end
 
       click_button 'Sign in'
@@ -23,8 +23,8 @@ feature 'Authentications', :type => :feature do
       visit new_user_session_path
 
       within('#new_user') do
-        fill_in 'Email', :with => @user.email
-        fill_in 'Password', :with => 'wrong password'
+        fill_in 'Email', with: @user.email
+        fill_in 'Password', with: 'wrong password'
       end
 
       click_button 'Sign in'

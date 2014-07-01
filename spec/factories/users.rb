@@ -2,7 +2,14 @@
 
 FactoryGirl.define do
   factory :user do
-    email Faker::Internet.email
+    email { Faker::Internet.email }
     password 'mypassword'
+
+    factory :user_with_credentials do
+      after(:create) do |user|
+        FactoryGirl.create(:oauth_credential, user: user)
+      end
+    end
+
   end
 end
