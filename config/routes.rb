@@ -5,6 +5,10 @@ Rails.application.routes.draw do
   get '/create', to: 'home#create'
 
   # OAuth
-  get '/authorize', to: 'services/oauth2#authorize'
-  get '/services/oauth2/callback', to: 'services/oauth2#callback'
+  namespace :services do
+    resource :oauth2, controller: :oauth2, only: [:edit, :create, :update] do
+      get 'authorize', :on => :collection
+      get 'callback', :on => :collection
+    end
+  end
 end

@@ -1,0 +1,7 @@
+<h2>Salesforce Integration API</h2>
+<%= simple_form_for(@oauth_credential, url: services_oauth2_path) do |f| %>
+    <%= f.input :instance_url %>
+    <%= f.input :client_id, label: 'Client id' %>
+    <%= f.input :client_secret %>
+    <%= f.submit %>
+<% end %>
