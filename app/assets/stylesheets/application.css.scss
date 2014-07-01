@@ -16,8 +16,8 @@
   @extend %flash-notice;
 }
 
-#flash_success, .success {
-  @extend %flash-success;
+#flash_error, .error {
+  @extend %flash-error;
 }
 
 
