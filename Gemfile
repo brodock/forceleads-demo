@@ -10,7 +10,7 @@ gem 'uglifier'
 gem 'unicorn'
 
 gem 'oauth2'
-gem 'force_leads'
+gem 'force_leads', git: 'https://github.com/brodock/force-leads.git'
 
 gem 'devise'
 
