@@ -4,6 +4,9 @@ Rails.application.routes.draw do
 
   get '/create', to: 'home#create'
 
+  # Leads controller
+  resource :lead, only: [:new, :create]
+
   # OAuth
   namespace :services do
     resource :oauth2, controller: :oauth2, only: [:edit, :create, :update] do

@@ -9,10 +9,10 @@
     <div class="nav">
       <ul id="navigation-menu">
         <% if user_signed_in? %>
-            <li class="nav-link"><a href="javascript:void(0)">Leads</a></li>
+            <li class="nav-link"><%= link_to 'Leads', new_lead_path %></li>
             <li class="nav-link more"><a href="javascript:void(0)">Settings</a>
               <ul class="submenu">
-                <li><a href="javascript:void(0)">Salesforce Integration</a></li>
+                <li><%= link_to 'Salesforce Integration', edit_services_oauth2_path %></li>
               </ul>
             </li>
         <% end %>

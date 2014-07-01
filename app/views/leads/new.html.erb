@@ -1,0 +1,12 @@
+<h2>New Lead</h2>
+
+<%= simple_form_for(@lead, url: lead_path) do |f| %>
+    <%= f.input :first_name %>
+    <%= f.input :last_name %>
+    <%= f.input :email %>
+    <%= f.input :company %>
+    <%= f.input :title %>
+    <%= f.input :phone %>
+    <%= f.input :website %>
+    <%= f.submit %>
+<% end %>
