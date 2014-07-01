@@ -14,9 +14,6 @@ if [ ! -f .env ]; then
   cp .sample.env .env
 fi
 
-# Set up database and add any development seed data
-bundle exec rake dev:prime
-
 # Set up staging and production git remotes.
 git remote add staging git@heroku.com:forceleads-demo-staging.git || true
 git remote add production git@heroku.com:forceleads-demo-production.git || true
@@ -33,4 +30,3 @@ if heroku join --app forceleads-demo-production &> /dev/null; then
 else
   echo 'Ask for access to the "forceleads-demo-production" Heroku app'
 fi
-
