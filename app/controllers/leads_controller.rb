@@ -30,6 +30,10 @@ class LeadsController < ApplicationController
 
   private
   def require_oauth_credentials!
-    redirect_to root_path, flash: {error: "You need to configure Salesforce integration first. Check 'Settings' menu."} if current_user.oauth_credential.nil?
+    if current_user.oauth_credential.nil?
+      redirect_to root_path, flash: {error: "You need to configure Salesforce integration first. Check 'Settings' menu."}
+    elsif current_user.oauth_credential.oauth_token.nil? || current_user.oauth_credential.oauth_token.empty?
+      redirect_to authorize_services_oauth2_path
+    end
   end
 end
