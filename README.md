@@ -8,18 +8,27 @@ This repository comes equipped with a self-setup script:
 
     % ./bin/setup
 
-After setting up, you can run the application using [foreman]:
+If you want to test locally, you can run with thin:
 
-    % foreman start
+    % thin start --ssl
 
-[foreman]: http://ddollar.github.io/foreman/
 
-Guidelines
-----------
+Setting up Salesforce API
+-------------------------
 
-Use the following guides for getting things done, programming well, and
-programming in style.
+For this demo to work correctly, you need to run the Rails application on HTTPS,
+as Salesforce REST API mandates the use of secure connections for the OAuth2
+authentication.
 
-* [Protocol](http://github.com/thoughtbot/guides/blob/master/protocol)
-* [Best Practices](http://github.com/thoughtbot/guides/blob/master/best-practices)
-* [Style](http://github.com/thoughtbot/guides/blob/master/style)
+You will have to follow the [Defining connected Apps](https://www.salesforce.com/us/developer/docs/api_rest/Content/intro_defining_remote_access_applications.htm) reference to learn how to
+generate the OAuth2 credentials to be able to connect this app with Salesforce API.
+
+
+Try our Demo
+------------
+
+If you want to try it without deploying by yourself, you do so by visiting:
+http://forceleads-demo-production.herokuapp.com
+
+You need to generate a specific **Connected App** for your company, using
+the following callback url: https://forceleads-demo-production.herokuapp.com/services/oauth2/callback
